@@ -1,12 +1,12 @@
 import "./App.css";
-import { API } from "./config";
+import config from "./config";
 import { useEffect, useState } from "react";
 import TempDetails from "./components/TempDetails";
 import WeatherDetails from "./components/WeatherDetails.jsx";
-import { tr } from "date-fns/locale";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const { API } = config;
   const [currentData, setCurrentData] = useState({});
   const [forecastData, setForecastData] = useState({});
 
