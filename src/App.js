@@ -6,7 +6,7 @@ import WeatherDetails from "./components/WeatherDetails.jsx";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const { API } = config;
+  const { API_TOKEN } = config;
   const [currentData, setCurrentData] = useState({});
   const [forecastData, setForecastData] = useState({});
 
@@ -20,10 +20,10 @@ function App() {
     // Preforms a API request and fetches data
     Promise.all([
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&units=metric&appid=${API}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&units=metric&appid=${API_TOKEN}`
       ),
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${searchQuery}&units=metric&appid=${API}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${searchQuery}&units=metric&appid=${API_TOKEN}`
       ),
     ])
       .then(async ([weather, forecast]) => {
