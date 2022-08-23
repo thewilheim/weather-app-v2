@@ -20,7 +20,7 @@ function WeatherDetails(props) {
         }
       });
 
-      const precipitation = (100 * precipitationData[0].pop);
+      const precipitation = Math.round(precipitationData[0].pop * 100) / 100;
 
 
     const weatherData = [
